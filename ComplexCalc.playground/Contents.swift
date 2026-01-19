@@ -41,9 +41,15 @@ class Calculator {
     }
     
     func divide(lhs: Int, rhs: Int) -> Int {
+        if (rhs == 0) {
+            return 0
+        }
         return lhs / rhs
     }
     
+    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
+        return op(lhs, rhs)
+    }
     
 }
 
