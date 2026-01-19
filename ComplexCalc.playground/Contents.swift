@@ -79,6 +79,18 @@ class Calculator {
         let sum = self.add(args)
         return sum / count
     }
+    
+    func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        var result = beg
+        
+        for num in args {
+            result = op(result, num)
+        }
+        
+        return result
+    }
+    
+    
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
