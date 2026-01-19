@@ -51,6 +51,34 @@ class Calculator {
         return op(lhs, rhs)
     }
     
+    func add(_ args: [Int]) -> Int {
+        var sum = 0
+        for num in args {
+            sum += num
+        }
+        return sum
+    }
+    
+    func multiply(_ args: [Int]) -> Int {
+        var product = 1
+        for num in args {
+            product *= num
+        }
+        return product
+    }
+    
+    func count(_ args: [Int]) -> Int {
+        return args.count
+    }
+    
+    func avg(_ args: [Int]) -> Int {
+        let count = args.count
+        if (count == 0) {
+            return 0
+        }
+        let sum = self.add(args)
+        return sum / count
+    }
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
