@@ -98,7 +98,32 @@ class Calculator {
         return (lhs.0 - rhs.0, lhs.1 - rhs.1)
     }
     
+    func add(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        let xFirstNum = lhs["x"] ?? 0
+        let xSecondNum = rhs["x"] ?? 0
+        
+        let yFirstNum = lhs["y"] ?? 0
+        let ySecondNum = rhs["y"] ?? 0
+        
+        var xSum = xFirstNum + xSecondNum
+        var ySum = yFirstNum + ySecondNum
+        
+        return ["x": xSum, "y": ySum]
+        
+    }
     
+    func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        let xFirstNum = lhs["x"] ?? 0
+        let xSecondNum = rhs["x"] ?? 0
+        
+        let yFirstNum = lhs["y"] ?? 0
+        let ySecondNum = rhs["y"] ?? 0
+        
+        var xDifference = xFirstNum - xSecondNum
+        var yDifference = yFirstNum - ySecondNum
+        
+        return ["x": xDifference, "y": yDifference]
+    }
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
@@ -114,7 +139,11 @@ let calc = Calculator()
 //: Keep in mind that writing new tests may reveal ambiguity in the specification above--if that's the case, document the ambiguity, declare what you think *should* happen, and write the test to test for it.
 
 // ===== Your tests go here
-
+calc.divide(lhs: 10, rhs: 0) == 0
+calc.avg([]) == 0
+calc.add([-1, -2, 3]) == 0
+calc.subtract(lhs: (-16, 8), rhs: (-9, -8)) == (-7, 16)
+calc.multiply([]) == 1
 //: ---
 //: ## Test code block
 //: Do not modify the code in this section
